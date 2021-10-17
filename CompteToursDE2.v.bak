@@ -1,0 +1,10 @@
+module CompteToursDE2 (GPIO[0], CLOCK_50, LEDG, LEDR);
+
+input GPIO[0], CLOCK_50
+
+output [7:0] LEDG;
+output [9:0] LEDR;
+
+CompteTours CompteToursCarte (GPIO, CLOCK_50, LEDG, LEDR);
+
+endmodule

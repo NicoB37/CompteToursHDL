@@ -1,0 +1,128 @@
+module TranscoLeds (Signal, LEDG, LEDR);
+
+input [8:0] Signal;
+
+output [7:0] LEDG;
+output [9:0] LEDR;
+reg [7:0] LEDG;
+reg [9:0] LEDR;
+
+always @(Signal)
+begin
+
+	if(Signal>=16 && Signal<33)
+	begin
+		LEDG <= 8'b10000000;
+		LEDR <= 10'b0000000000;
+	end
+	
+	else if(Signal>=33 && Signal<49)
+	begin
+		LEDG <= 8'b11000000;
+		LEDR <= 10'b0000000000;
+	end
+	
+	else if(Signal>=49 && Signal<66)
+	begin
+		LEDG <= 8'b11100000;
+		LEDR <= 10'b0000000000;
+	end
+	
+	else if(Signal>=66 && Signal<82)
+	begin
+		LEDG <= 8'b11110000;
+		LEDR <= 10'b0000000000;
+	end
+	
+	else if(Signal>=82 && Signal<99)
+	begin
+		LEDG <= 8'b11111000;
+		LEDR <= 10'b0000000000;
+	end
+	
+	else if(Signal>=99 && Signal<115)
+	begin
+		LEDG <= 8'b11111100;
+		LEDR <= 10'b0000000000;
+	end
+	
+	else if(Signal>=115 && Signal<132)
+	begin
+		LEDG <= 8'b11111110;
+		LEDR <= 10'b0000000000;
+	end
+	
+	else if(Signal>=132 && Signal<149)
+	begin
+		LEDG <= 8'b11111111;
+		LEDR <= 10'b0000000000;
+	end
+	
+	else if(Signal>=149 && Signal<166)
+	begin
+		LEDG <= 8'b11111111;
+		LEDR <= 10'b1000000000;
+	end
+	
+	else if(Signal>=166 && Signal<182)
+	begin
+		LEDG <= 8'b11111111;
+		LEDR <= 10'b1100000000;
+	end
+	
+	else if(Signal>=182 && Signal<199)
+	begin
+		LEDG <= 8'b11111111;
+		LEDR <= 10'b1110000000;
+	end
+	
+	else if(Signal>=199 && Signal<215)
+	begin
+		LEDG <= 8'b11111111;
+		LEDR <= 10'b1111000000;
+	end
+	
+	else if(Signal>=215 && Signal<232)
+	begin
+		LEDG <= 8'b11111111;
+		LEDR <= 10'b1111100000;
+	end
+	
+	else if(Signal>=232 && Signal<248)
+	begin
+		LEDG <= 8'b11111111;
+		LEDR <= 10'b1111110000;
+	end
+	
+	else if(Signal>=248 && Signal<265)
+	begin
+		LEDG <= 8'b11111111;
+		LEDR <= 10'b1111111000;
+	end
+	
+	else if(Signal>=265 && Signal<281)
+	begin
+		LEDG <= 8'b11111111;
+		LEDR <= 10'b1111111100;
+	end
+	
+	else if(Signal>=281 && Signal<298)
+	begin
+		LEDG <= 8'b11111111;
+		LEDR <= 10'b1111111110;
+	end
+	
+	else if(Signal>=298)
+	begin
+		LEDG <= 8'b11111111;
+		LEDR <= 10'b1111111111;
+	end
+	
+	else
+	begin
+		LEDG <= 8'b00000000;
+		LEDR <= 10'b0000000000;
+	end
+end
+endmodule
+	
